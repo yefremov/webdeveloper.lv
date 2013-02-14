@@ -1,6 +1,9 @@
 {
   "amd": {},
   "volo": {
-    "baseUrl": "www/js/lib"
+    "baseUrl": "www/js/lib",
+    "dependencies": {
+      "analytics": "github:segmentio/analytics.js/0.1.0"
+    }
   }
 }
