@@ -23,7 +23,7 @@
     "volo": {
         "baseUrl": "www/js/lib",
         "dependencies": {
-            "analytics": "github:segmentio/analytics.js/0.1.0"
+            "analytics": "https://raw.github.com/segmentio/analytics.js/master/analytics.js"
         }
     }
 }
