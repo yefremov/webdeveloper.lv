@@ -1,9 +1,40 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <script data-main="js/app" src="js/lib/require.js"></script>
-    </head>
-    <body>
-        <h1>Hello World</h1>
-    </body>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Anton Yefremov</title>
+    <script data-main="javascripts/app" src="js/lib/require.js"></script>
+  </head>
+  <body>
+    <div itemscope itemtype="http://data-vocabulary.org/Person">
+      <h1>Who I am?</h1>
+      <p>
+        My name is
+        <a href="http://about.me/anton.yefremov" itemprop="name" target="blank">Anton Yefremov</a>,
+        I'm
+        <span itemprop="title">Web Developer</span>
+        based in
+        <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+          <a href="http://goo.gl/maps/bSaaM" itemprop="locality" target="blank">Riga</a>,
+          <a href="http://goo.gl/maps/W7Nnu" itemprop="region" target="blank">Latvia</a>.
+        </span>
+      </p>
+      <p>
+        <span itemprop="description">
+          I do front-end and back-end programming using HTML, CSS, JavaScript, PHP and Symfony framework.
+          <br>
+          In my spare time I contribute to open source on
+          <a href="http://github.com/yefremov" target="blank">GitHub</a>.
+          You can find out more about me on
+          <a href="http://www.linkedin.com/in/ayefremov" target="blank">Linked In</a>.
+        </span>
+      </p>
+      <p>
+        If you want to get in touch, send me an email to
+        <a href="mailto:anton.yefremov@gmail.com" itemprop="email">anton.yefremov@gmail.com</a>.
+      </p>
+    </div>
+  </body>
 </html>
