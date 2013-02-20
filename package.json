@@ -1,29 +1,31 @@
 {
-    "name": "webdeveloper.lv",
-    "description": "My personal website",
-    "version": "0.1.0",
-    "homepage": "https://github.com/yefremov/webdeveloper.lv",
-    "author": {
-        "name": "Anton Yefremov",
-        "email": "anton.yefremov@gmail.com",
-        "url": "http://webdeveloper.lv"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/yefremov/webdeveloper.lv.git"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://opensource.org/licenses/MIT"
-        }
-    ],
-    "devDependencies": {},
-    "amd": {},
-    "volo": {
-        "baseUrl": "www/js/lib",
-        "dependencies": {
-            "analytics": "https://raw.github.com/segmentio/analytics.js/master/analytics.js"
-        }
+  "name": "webdeveloper.lv",
+  "description": "My personal website",
+  "version": "0.1.0",
+  "homepage": "https://github.com/yefremov/webdeveloper.lv",
+  "author": {
+    "name": "Anton Yefremov",
+    "email": "anton.yefremov@gmail.com",
+    "url": "http://webdeveloper.lv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yefremov/webdeveloper.lv.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
     }
+  ],
+  "devDependencies": {
+    "node-sass": "~0.3.0"
+  },
+  "amd": {},
+  "volo": {
+    "baseUrl": "www/js/lib",
+    "dependencies": {
+      "analytics": "https://raw.github.com/segmentio/analytics.js/master/analytics.js"
+    }
+  }
 }
