@@ -1,3 +1,6 @@
+## Webdeveloper.lv
+This is my personal website.
+## Usage
 This web project has the following setup:
 
 * www/ - the web assets for the project
