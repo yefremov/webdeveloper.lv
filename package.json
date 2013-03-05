@@ -19,14 +19,14 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
- "devDependencies": {
-    "node-sass": "~0.3.0"
+  "devDependencies": {
+    "stylus": "~0.32.1"
   },
   "amd": {},
   "volo": {
     "baseUrl": "www/js/lib",
     "dependencies": {
-      "analytics": "https://raw.github.com/segmentio/analytics.js/master/analytics.js"
+      "analytics": "github:segmentio/analytics.js/0.8.3"
     }
   }
 }
