@@ -20,7 +20,8 @@
     }
   ],
   "devDependencies": {
-    "stylus": "~0.32.1"
+    "rework": "~0.13.2",
+    "rework-mixins": "~1.0.2"
   },
   "amd": {},
   "volo": {
