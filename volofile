@@ -8,11 +8,7 @@ module.exports = {
       'q': 'quiet'
     }
   , 'run': function ( d, v, namedArgs ) {
-      var Q = require( 'q' );
-
-      Q.call(function () {
-        
-      });
+      d.resolve();
     }
   }
 };
