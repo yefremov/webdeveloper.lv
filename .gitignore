@@ -166,7 +166,10 @@ pip-log.txt
 ## Node.js
 ############
 
+# Local modules
 node_modules
+
+# NPM log
 npm-debug.log
 
 www-built
