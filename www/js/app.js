@@ -4,12 +4,22 @@
 // except for 'app' ones, which are in a sibling
 // directory.
 requirejs.config({
-    baseUrl: 'js/lib',
-    paths: {
-        app: '../app'
+  'baseUrl': 'js/lib'
+, 'paths': {
+    'app': '../app'
+  }
+, 'config': {
+    'app/main': {
+      'analytics': {
+        'Google Analytics': {
+          'trackingId': 'UA-24076531-2'
+        , 'domain' :    'webdeveloper.lv'
+        }
+      }
     }
+  }
 });
 
 // Start loading the main app file. Put all of
 // your application logic in there.
-requirejs(['app/main']);
+requirejs([ 'app/main' ]);

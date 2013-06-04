@@ -1,8 +1,5 @@
-define(function (require) {
-    // Load any app-specific modules
-    // with a relative require call,
-    // like:
-    // var util = require('./util');
-
-    console.log('Hello world');
+// Load module config and analytics module.
+define([ 'module', 'analytics' ], function ( module, analytics ) {
+  // Initialize analytics.js with give config.
+  analytics.initialize(module.config().analytics);
 });
