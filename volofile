@@ -2,13 +2,85 @@
 'use strict';
 
 module.exports = {
-  'build': {
+  'styl': {
     'flags': {
-      // Does not print the build output.
+      // Enable output compression
+      'c': 'compress'
+      // Enable css whitespace
+    , 'w': 'whitespace'
+    }
+  , 'run': function ( d, v, namedArgs ) {
+      var styl = require('./node_modules/styl');
+      v.require('q').call(function () {
+        // Remove www/css directory
+        v.rm('www/css');
+        // Make www/css directory
+        return v.mkdir('www/css');
+      }).then(function () {
+        // Compile styl/app.css
+        return styl(v.read('www/styl/app.css'), {
+          'compress': namedArgs.compress
+        , 'whitespace': namedArgs.whitespace
+        }).toString();
+      }).then(function (css) {
+        // Write stylesheet
+        return v.write('www/css/app.css', css);
+      }).then(function () {
+        d.resolve()
+      }, d.reject);
+    }
+  }
+, 'build': {
+    'flags': {
+      // Does not print the build output
       'q': 'quiet'
     }
   , 'run': function ( d, v, namedArgs ) {
-      d.resolve();
+      v.require('q').call(function () {
+        // Optimize CSS
+        return v.command('styl', '-c', '-w');
+      }).then(function () {
+        // Remove the old dir
+        v.rm('www-built');
+        // Copy the directory for output.
+        v.copyDir('www', 'www-built');
+        // Remove the js dir from the built area, will be
+        // replaced by an optimized app.js
+        return v.rm('www-built/js');
+      }).then(function () {
+        return v.rm('www-built/styl');
+      }).then(function () {
+        // Optimize JavaScript
+        return v.spawn('node', [
+          'tools/r.js', '-o'
+        , 'baseUrl=www/js/lib'
+        , 'paths.app=../app'
+        , 'paths.almond=../../../tools/almond'
+        , 'optimize=uglify2'
+        , 'name=almond'
+        , 'include=app'
+        , 'insertRequire=app'
+        , 'out=www-built/js/app.js'
+        , 'wrap=true'
+        , 'preserveLicenseComments=false'
+        ], {
+          'useConsole': !namedArgs.quiet
+        });
+      }).then(function (out) {
+        // Update script tag
+        var indexName = 'www-built/index.html'
+          , contents = v.read(indexName)
+          , scriptRegExp = /(<script[^>]+data-main="[^"]+"[^>]+)(src="[^"]+")([^>]*>\s*<\/script>)/;
+        // Replace src value
+        contents = contents.replace(scriptRegExp, function (match, pre, script, post) {
+          return pre + 'src="js/app.js"' + post;
+        });
+        // Write changes to index.html
+        v.write(indexName, contents);
+        return out;
+      }).then(function (out) {
+        d.resolve(out);
+      }, d.reject);
     }
   }
 };
