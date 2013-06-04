@@ -1,7 +1,7 @@
 {
   "name": "webdeveloper.lv",
   "description": "My personal website",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "homepage": "https://github.com/yefremov/webdeveloper.lv",
   "author": {
@@ -20,14 +20,14 @@
     }
   ],
   "devDependencies": {
-    "rework": "~0.13.2",
-    "rework-mixins": "~1.0.2"
+    "styl": "0.2.1"
   },
   "amd": {},
   "volo": {
     "baseUrl": "www/js/lib",
     "dependencies": {
-      "analytics": "github:segmentio/analytics.js/0.8.3"
+      "require": "github:jrburke/requirejs/2.1.6",
+      "analytics": "github:segmentio/analytics.js/0.11.5"
     }
   }
 }
