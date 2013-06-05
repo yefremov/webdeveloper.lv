@@ -19,7 +19,7 @@ $ npm install
 Compile whitespace css using `styl`:
 
 ```sh
-$ volo styl -w
+$ volo styl
 ```
 
 Build whole application using `Almond`, optimizing JavaScript and CSS:
