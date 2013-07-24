@@ -20,7 +20,7 @@
     }
   ],
   "devDependencies": {
-    "styl": "0.2.1"
+    "styl": "0.2.3"
   },
   "amd": {},
   "volo": {
